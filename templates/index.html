@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Skin Disease Detection</h1>
+        <h1>AI-Powered Skin Disease Detection</h1>
+        <p>Upload an image of a skin lesion to get a prediction of potential skin diseases.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label class = "custom-file-upload">
+                <input type="file" name="image" accept="image/*" required>
+                Choose Image
+            </label>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if upload_image %}
+        <div class="result-card">
+            <img src="{{ uploaded_image }}" alt="Uploaded Image">
+            <h2>Predicted class:<span>{{ predicted_label }}</span></h2>
+            <h3>Confidence Score: <span>{{ confidence_score | round(2) }}%</span></h3>
+            <p><strong>Cause</strong> {{ cause }} </p>
+            <p><strong>Precaution: </strong> {{ precaution }} </p>
+        </div>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,31 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dataset folders
+train/
+test/
+val/
+dataset/
+datasets/
+archive/
+archive.zip/
+
+# Trained model weights
+*.pth
+*.pt
+*.onnx
+
+# Generated files
+runs/
+outputs/
+*.log
