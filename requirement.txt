@@ -1,9 +1,9 @@
-
 streamlit
 ultralytics
+opencv-python-headless
+Pillow
+numpy
+pandas
 torch
 torchvision
-pillow
-pandas
-numpy
 reportlab
